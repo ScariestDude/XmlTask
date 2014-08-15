@@ -12,7 +12,7 @@ public class XMLReader {
         return node.getNodeValue();
     }
 
-    protected boolean printSoups(Document menu) {
+    protected void printSoups(Document menu) {
         NodeList soupNodeList = menu.getElementsByTagName("soup");
         System.out.println("\nDish category : " + menu.getElementsByTagName("soups").item(0).getNodeName());
 
@@ -25,10 +25,9 @@ public class XMLReader {
                 System.out.println("Price : " + getValue("price", element));
             }
         }
-        return true;
     }
 
-    protected boolean printSalads(Document menu) {
+    protected void printSalads(Document menu) {
         NodeList saladNodeList = menu.getElementsByTagName("salad");
         System.out.println("\nDish category : " + menu.getElementsByTagName("salads").item(0).getNodeName());
 
@@ -41,7 +40,6 @@ public class XMLReader {
                 System.out.println("Price : " + getValue("price", element));
             }
         }
-        return true;
     }
 }
 

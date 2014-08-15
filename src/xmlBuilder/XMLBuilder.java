@@ -6,25 +6,23 @@ import xmlBuilder.dishes.Salad;
 import xmlBuilder.dishes.Soup;
 
 public class XMLBuilder {
-    protected boolean setSoups() {
+    protected void setSoups() {
         Soup soup1 = new Soup("french onion soup", "12.30");
         Soup soup2 = new Soup("borscht", "8.75");
         Soup soup3 = new Soup("fish sup", "9.99");
         Soup soup4 = new Soup("cheese soup", "10.20");
         Soup soup5 = new Soup("pea soup", "8.90");
-        return true;
     }
 
-    protected boolean setSalads() {
+    protected void setSalads() {
         Salad salad1 = new Salad("Caesar", "13.86");
         Salad salad2 = new Salad("Greek salad", "12.43");
         Salad salad3 = new Salad("Potato salad", "8.23");
         Salad salad4 = new Salad("Vinegret", "9.35");
         Salad salad5 = new Salad("Chicken salad", "13.10");
-        return true;
     }
 
-    protected boolean putSoupsIntoMenu(Document menu, Element element) {
+    protected void putSoupsIntoMenu(Document menu, Element element) {
         Element soupsElement = menu.createElement("soups");
         element.appendChild(soupsElement);
 
@@ -38,10 +36,9 @@ public class XMLBuilder {
             price.appendChild(menu.createTextNode(Soup.getSoupPriceList().get(i)));
             soupElement.appendChild(price);
         }
-        return true;
     }
 
-    protected boolean putSaladsIntoMenu(Document menu, Element element) {
+    protected void putSaladsIntoMenu(Document menu, Element element) {
         Element saladsElement = menu.createElement("salads");
         element.appendChild(saladsElement);
 
@@ -55,6 +52,5 @@ public class XMLBuilder {
             price.appendChild(menu.createTextNode(Salad.getSaladPriceList().get(i)));
             saladElement.appendChild(price);
         }
-        return true;
     }
 }
